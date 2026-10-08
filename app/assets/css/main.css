@@ -20,7 +20,7 @@
   --color-white: #ffffff;
   --color-black: #000000;
 
-  --color-accent: #c4f135;           /* accent/base (chốt giá trị light, khớp bản published) */
+  --color-accent: #d6ff4b;           /* accent/base: khớp ảnh design (#D6FF4C) và bản published */
   --color-accent-contrast: #101114;  /* accent/contrast, text/inverse */
   --color-signal: #ff6a33;           /* accent/Signal */
 
@@ -146,7 +146,12 @@
 }
 
 @layer base {
+  /* Đặt cỡ chữ ở body, không ở html, để rem giữ 16px (spacing của Tailwind tính theo rem) */
   html {
-    @apply bg-surface-dark font-sans text-body-md text-fg antialiased;
+    @apply bg-surface-dark;
+  }
+
+  body {
+    @apply font-sans text-body-md text-fg antialiased;
   }
 }

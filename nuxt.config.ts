@@ -4,6 +4,11 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxt/fonts', '@nuxt/image', '@nuxt/test-utils/module'],
   devtools: { enabled: true },
+  app: {
+    head: {
+      htmlAttrs: { lang: 'vi' }
+    }
+  },
   css: ['~/assets/css/main.css'],
   compatibilityDate: '2025-07-15',
   vite: {

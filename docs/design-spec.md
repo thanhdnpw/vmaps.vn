@@ -199,7 +199,7 @@ Khai báo trong `app/assets/css/main.css` (`@theme`), font load qua `@nuxt/fonts
 
 | Framer | Tailwind |
 |---|---|
-| `accent/base` | `accent` (chốt `#C4F135`) |
+| `accent/base` | `accent` (chốt `#D6FF4B`, khớp ảnh design trong `design/`) |
 | `accent/contrast`, `text/inverse` | `accent-contrast`, `fg-inverse` |
 | `accent/Signal` | `signal` |
 | `bg/Dark`, `bg/subtle`, `bg/card` | `surface-dark`, `surface-subtle`, `surface-card` |
