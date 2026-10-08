@@ -2,7 +2,7 @@
 // Button của Framer (docs/design-spec.md §5): `accent` = Standard Accent (cao 44), `dark` = Large Black (cao 56),
 // `light` = biến thể sáng ở Routes (cao 56, nền text/primary), `accent-lg` = Large Accent (cao 56, trang 404).
 // Link ngoài (http...) mở tab mới; link nội bộ đi qua router.
-// Anchor `/#id` khi đang ở đúng trang thì tự cuộn mượt: router bỏ qua điều hướng trùng route nên bấm lần 2 sẽ không cuộn.
+// Anchor `/#id` tự cuộn mượt có animation (utils/scroll.ts). Khác trang thì chuyển trang trước rồi mới cuộn.
 const props = withDefaults(defineProps<{
   href: string
   variant?: 'accent' | 'accent-lg' | 'dark' | 'light'
@@ -15,15 +15,21 @@ const props = withDefaults(defineProps<{
 const isExternal = computed(() => /^https?:\/\//.test(props.href))
 
 const route = useRoute()
-function onClick(event: MouseEvent) {
+const nuxtApp = useNuxtApp()
+
+async function onClick(event: MouseEvent) {
   const [path, id] = props.href.split('#')
-  if (!id || path !== route.path || event.metaKey || event.ctrlKey || event.shiftKey) return
-  const target = document.getElementById(id)
-  if (!target) return
+  if (!id || event.metaKey || event.ctrlKey || event.shiftKey) return
   event.preventDefault()
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' })
-  history.replaceState(history.state, '', `#${id}`)
+  if (path && path !== route.path) {
+    // Đợi trang mới render xong (và router cuộn về đầu trang) rồi mới cuộn tới anchor
+    const rendered = new Promise<void>(resolve => nuxtApp.hooks.hookOnce('page:finish', () => {
+      setTimeout(resolve, 50)
+    }))
+    await navigateTo(path)
+    await rendered
+  }
+  scrollToId(id)
 }
 </script>
 

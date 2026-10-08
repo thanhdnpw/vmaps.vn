@@ -12,12 +12,12 @@ export default defineNuxtConfig({
         { name: 'format-detection', content: 'telephone=no' },
         { property: 'og:site_name', content: 'VMAP' },
         { property: 'og:locale', content: 'vi_VN' },
-        { property: 'og:image', content: 'https://vmaps.vn/images/routes/hanoi-skyline.jpg' },
-        { property: 'og:image:width', content: '2048' },
-        { property: 'og:image:height', content: '1211' },
+        { property: 'og:image', content: 'https://vmaps.vn/og-image.jpg' },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
         { property: 'og:image:alt', content: 'VMAP - Một bản đồ, mọi hành trình' },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:image', content: 'https://vmaps.vn/images/routes/hanoi-skyline.jpg' }
+        { name: 'twitter:image', content: 'https://vmaps.vn/og-image.jpg' }
       ],
       link: [
         { rel: 'icon', href: '/favicon.ico', sizes: '48x48' },
