@@ -2,12 +2,22 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "vmapsvn",
   "compatibility_date": "2025-07-15",
+  // Script chỉ xử lý redirect www → apex (worker/index.ts), còn lại phục vụ static assets.
+  "main": "worker/index.ts",
   // Site tĩnh: `nuxt generate` prerender toàn bộ (kể cả ảnh @nuxt/image) vào .output/public.
   "assets": {
     "directory": ".output/public",
-    "not_found_handling": "404-page"
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    // URL không có "/" cuối, khớp canonical và sitemap (/changelog/ → /changelog)
+    "html_handling": "drop-trailing-slash",
+    // Chạy script trước để bắt cả request tới www có file tĩnh trùng path
+    "run_worker_first": true
   },
-  // Domain chính (zone vmaps.vn trên Cloudflare), wrangler tự tạo DNS + SSL.
-  "routes": [{ "pattern": "vmaps.vn", "custom_domain": true }],
+  // Domain chính (zone vmaps.vn trên Cloudflare), wrangler tự tạo DNS + SSL. www chỉ để redirect.
+  "routes": [
+    { "pattern": "vmaps.vn", "custom_domain": true },
+    { "pattern": "www.vmaps.vn", "custom_domain": true }
+  ],
   "observability": { "enabled": true }
 }
