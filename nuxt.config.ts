@@ -18,6 +18,10 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()]
   },
+  // Footer còn link tới các trang chưa dựng (/press, /privacy, ...) — không chặn `nuxt generate` vì 404 của chúng.
+  nitro: {
+    prerender: { failOnError: false }
+  },
   // Geist + Geist Mono theo docs/design-spec.md §3.2. Tự host qua @nuxt/fonts.
   fonts: {
     defaults: {
