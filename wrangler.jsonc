@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "vmaps-vn",
+  "name": "vmapsvn",
   "compatibility_date": "2025-07-15",
   // Site tĩnh: `nuxt generate` prerender toàn bộ (kể cả ảnh @nuxt/image) vào .output/public.
   "assets": {
