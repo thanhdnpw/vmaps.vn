@@ -35,9 +35,9 @@ const steps = [
 </script>
 
 <template>
-  <section class="bg-surface-dark px-gutter pt-section pb-5 md:pb-section">
+  <section id="stories" class="bg-surface-dark px-gutter pt-section pb-5 md:pb-section">
     <!-- 4a. Features -->
-    <div class="mx-auto flex flex-col gap-block md:max-w-153 md:flex-row md:gap-14 md:py-35 lg:max-w-none">
+    <div id="features" class="mx-auto flex flex-col gap-block md:max-w-153 md:flex-row md:gap-14 md:py-35 lg:max-w-none">
       <div class="flex flex-col gap-2.5 md:sticky md:top-40 md:flex-1 md:self-start">
         <!-- Ảnh design phone không có eyebrow -->
         <p class="hidden font-mono text-eyebrow font-medium text-accent uppercase md:block">
@@ -79,7 +79,7 @@ const steps = [
     </div>
 
     <!-- 4b. How it works -->
-    <div class="mt-40.5 flex flex-col items-center gap-12 rounded-lg bg-accent px-5 pt-12 pb-30 text-center text-fg-inverse md:mt-30.25 md:px-10 md:pt-30 md:pb-40 lg:mt-32.25 lg:px-20 lg:pb-50">
+    <div id="how-it-works" class="mt-40.5 flex flex-col items-center gap-12 rounded-lg bg-accent px-5 pt-12 pb-30 text-center text-fg-inverse md:mt-30.25 md:px-10 md:pt-30 md:pb-40 lg:mt-32.25 lg:px-20 lg:pb-50">
       <h2 class="text-display-lg text-balance">
         Bắt đầu hành trình với VMAP
       </h2>

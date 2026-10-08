@@ -157,4 +157,9 @@
   body {
     @apply font-sans text-body-md text-fg antialiased;
   }
+
+  /* Anchor không bị header cố định che */
+  [id] {
+    scroll-margin-top: var(--spacing-header);
+  }
 }
