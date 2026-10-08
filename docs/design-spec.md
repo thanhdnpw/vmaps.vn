@@ -80,16 +80,16 @@ Font: **Geist** (400, 500, 600) và **Geist Mono** (500), lấy từ Google Font
 | `display/xl` | h1 | Geist 600 | 72 | 64 | 56 | 1.05em | -0.04em | |
 | `display/lg` | h2 | Geist 600 | 48 | 42 | 36 | 1.1em | -0.015em | |
 | `stat` | p | Geist 600 | 56 | ? | ? | 1em | -0.01em | |
-| `heading/md` | h3 | Geist 600 | 28 | 28 | 22 | 1.2em | 0 | Feature card title |
-| `heading/sm` | h4 | Geist 600 | 20 | 19 | 18 | 1.4em (P: 1.3) | 0 | Step title, logo |
+| `heading/md` | h3 | Geist 600 | 28 | 25 | 22 | 1.2em | 0 | Feature card title |
+| `heading/sm` | h4 | Geist 600 | 20 | 19 | 18 | 1.4em (T, P: 1.3) | 0 | Step title, logo |
 | `body/lg` | p | Geist 400 | 18 | 17 | 16 | 1.5em | 0 | |
-| `body/md` | p | Geist 400 | 16 | 16 | 15 | 1.5em | 0 | |
+| `body/md` | p | Geist 400 | 16 | 15 | 15 | 1.5em | 0 | |
 | `caption` | p | Geist 400 | 14 | 14 | 14 | 1.4em | 0 | Nav link |
 | `eyebrow` | p | Geist Mono 500 | 12 | 12 | 12 | 1.4em | 0.06em | uppercase |
 | `on-accent/*` | | (copy của display-xl, display-lg, heading-md, heading-sm, body-md) | | | | | | Cùng thông số, khác màu chữ (`text/inverse`) để dùng trên nền accent |
 
 Size T/P đo từ bản published. "?" là chưa thấy dùng trên `/`.
-Nút: Geist 400, 16px / 24px (phone 15px).
+Nút: Geist 400, 16px / 24px (tablet, phone 15px).
 
 ### 3.3 Spacing
 
