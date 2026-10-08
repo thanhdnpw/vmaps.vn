@@ -22,13 +22,15 @@ useSeoMeta({
     <main>
       <!-- Framer "Not found section": cao 100vh, ảnh nền neo đỉnh, nội dung căn giữa; padding theo nhịp section -->
       <section class="relative isolate flex min-h-svh flex-col items-center justify-center px-gutter py-section">
-        <NuxtImg
+        <!-- Ảnh tĩnh thay vì NuxtImg: trang lỗi không được prerender nên biến thể /_ipx/ không tồn tại trên bản static -->
+        <img
           src="/images/not-found/runners.jpg"
           alt=""
-          sizes="xs:100vw md:100vw lg:100vw"
+          width="1200"
+          height="1365"
+          fetchpriority="high"
           class="absolute inset-0 -z-10 size-full object-cover object-top"
-          preload
-        />
+        >
 
         <!-- Framer "Not found content": maxW 700, bo 20, padding 40/24/24 · 48, gap 12 · 20 -->
         <div class="flex max-w-175 flex-col items-center gap-3 rounded-lg bg-surface-dark px-6 pt-10 pb-6 text-center md:gap-5 md:p-12">
