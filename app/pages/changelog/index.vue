@@ -18,5 +18,10 @@ useSeoMeta({
         Every release, newest first. Follow along as Streaks gets better.
       </p>
     </header>
+
+    <!-- Framer "Release list": 1 cột, tablet 2 cột với các hàng cao bằng nhau; card giữ chiều cao riêng (không kéo giãn) -->
+    <div class="grid items-start gap-4 md:auto-rows-fr md:grid-cols-2 lg:auto-rows-auto lg:grid-cols-1">
+      <ChangelogReleaseCard v-for="entry in CHANGELOG_ENTRIES" :key="entry.slug" :entry="entry" />
+    </div>
   </main>
 </template>
