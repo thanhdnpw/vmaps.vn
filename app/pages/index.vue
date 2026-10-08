@@ -11,5 +11,6 @@ useSeoMeta({
     <HomeBenefitsSection />
     <HomeResultsSection />
     <HomeStoriesSection />
+    <HomeRoutesSection />
   </main>
 </template>

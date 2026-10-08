@@ -37,7 +37,6 @@ const phones = [
             densities="x1 x2"
             :style="{ height: `${phone.h}px` }"
             class="absolute top-2.5 left-2.25 w-52.5 max-w-none rounded-lg object-cover"
-            loading="lazy"
           />
           <NuxtImg
             src="/images/hero/phone-frame.png"

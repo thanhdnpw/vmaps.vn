@@ -11,6 +11,10 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css'],
   compatibilityDate: '2025-07-15',
+  // Breakpoint ảnh khớp Tailwind (phone 390 / tablet 810 / desktop 1200) + màn lớn cho ảnh full-bleed.
+  image: {
+    screens: { xs: 390, md: 810, lg: 1200, xl: 1440, xxl: 1920, '2xl': 2560 }
+  },
   vite: {
     plugins: [tailwindcss()]
   },

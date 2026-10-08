@@ -1,8 +1,9 @@
 <script setup lang="ts">
-// Button của Framer (docs/design-spec.md §5): `accent` = Standard Accent (cao 44), `dark` = Large Black (cao 56).
+// Button của Framer (docs/design-spec.md §5): `accent` = Standard Accent (cao 44), `dark` = Large Black (cao 56),
+// `light` = biến thể sáng ở Routes (cao 56, nền text/primary).
 withDefaults(defineProps<{
   href: string
-  variant?: 'accent' | 'dark'
+  variant?: 'accent' | 'dark' | 'light'
   icon?: boolean
 }>(), {
   variant: 'accent',
@@ -16,9 +17,11 @@ withDefaults(defineProps<{
     target="_blank"
     rel="noopener"
     class="inline-flex items-center justify-center gap-1.5 rounded-sm text-body-md transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2"
-    :class="variant === 'accent'
-      ? 'h-11 bg-accent px-5 text-fg-inverse shadow-button-accent focus-visible:outline-fg'
-      : 'h-14 bg-surface-dark px-7.5 text-fg shadow-button-dark focus-visible:outline-surface-dark'"
+    :class="{
+      'h-11 bg-accent px-5 text-fg-inverse shadow-button-accent focus-visible:outline-fg': variant === 'accent',
+      'h-14 bg-surface-dark px-7.5 text-fg shadow-button-dark focus-visible:outline-surface-dark': variant === 'dark',
+      'h-14 bg-fg px-5 text-fg-inverse shadow-button-accent focus-visible:outline-fg': variant === 'light'
+    }"
   >
     <!-- Phosphor PlayCircle (fill) -->
     <svg
