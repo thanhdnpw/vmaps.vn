@@ -82,7 +82,7 @@ Font: **Geist** (400, 500, 600) và **Geist Mono** (500), lấy từ Google Font
 | `stat` | p | Geist 600 | 56 | ? | ? | 1em | -0.01em | |
 | `heading/md` | h3 | Geist 600 | 28 | 28 | 22 | 1.2em | 0 | Feature card title |
 | `heading/sm` | h4 | Geist 600 | 20 | 20 | 18 | 1.4em (P: 1.3) | 0 | Step title, logo |
-| `body/lg` | p | Geist 400 | 18 | 18 | 16 | 1.5em | 0 | |
+| `body/lg` | p | Geist 400 | 18 | 17 | 16 | 1.5em | 0 | |
 | `body/md` | p | Geist 400 | 16 | 16 | 15 | 1.5em | 0 | |
 | `caption` | p | Geist 400 | 14 | 14 | 14 | 1.4em | 0 | Nav link |
 | `eyebrow` | p | Geist Mono 500 | 12 | 12 | 12 | 1.4em | 0.06em | uppercase |

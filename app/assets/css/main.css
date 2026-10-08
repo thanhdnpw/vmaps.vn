@@ -123,7 +123,7 @@
     --text-heading-md: 28px;
     --text-heading-sm: 20px;
     --text-heading-sm--line-height: 1.4;
-    --text-body-lg: 18px;
+    --text-body-lg: 17px;
     --text-body-md: 16px;
 
     --spacing-gutter: 48px;
@@ -138,6 +138,7 @@
   :root {
     --text-display-xl: 72px;
     --text-display-lg: 48px;
+    --text-body-lg: 18px;
 
     --spacing-gutter: 100px;
     --spacing-section: 140px;
