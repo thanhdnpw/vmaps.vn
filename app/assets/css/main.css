@@ -121,7 +121,7 @@
     --text-display-xl: 64px;
     --text-display-lg: 42px;
     --text-heading-md: 28px;
-    --text-heading-sm: 20px;
+    --text-heading-sm: 19px;
     --text-heading-sm--line-height: 1.4;
     --text-body-lg: 17px;
     --text-body-md: 16px;
@@ -139,6 +139,7 @@
     --text-display-xl: 72px;
     --text-display-lg: 48px;
     --text-body-lg: 18px;
+    --text-heading-sm: 20px;
 
     --spacing-gutter: 100px;
     --spacing-section: 140px;

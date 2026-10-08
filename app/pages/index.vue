@@ -9,5 +9,6 @@ useSeoMeta({
   <main>
     <HomeHeroSection />
     <HomeBenefitsSection />
+    <HomeResultsSection />
   </main>
 </template>
