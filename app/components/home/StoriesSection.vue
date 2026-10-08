@@ -35,28 +35,33 @@ const steps = [
 </script>
 
 <template>
-  <section id="stories" class="bg-surface-dark px-gutter pt-section pb-5 md:pb-section">
+  <section id="stories" class="bg-surface-dark px-gutter pt-6 pb-5 md:pt-section md:pb-section">
     <!-- 4a. Features -->
-    <div id="features" class="mx-auto flex flex-col gap-block md:max-w-153 md:flex-row md:gap-14 md:py-35 lg:max-w-none">
-      <div class="flex flex-col gap-2.5 md:sticky md:top-40 md:flex-1 md:self-start">
+    <!--
+      Phone theo ảnh design: Framer giữ cỡ chữ desktop cho phần này (tiêu đề 48, mô tả 18),
+      heading thụt 16px (rộng 318), card thụt 10px (rộng 330), heading cách card 56.
+    -->
+    <div id="features" class="mx-auto flex flex-col gap-14 md:max-w-153 md:flex-row md:py-35 lg:max-w-none">
+      <div class="flex flex-col gap-9.75 px-4 md:sticky md:top-40 md:flex-1 md:gap-2.5 md:self-start md:px-0">
         <!-- Ảnh design phone không có eyebrow -->
         <p class="hidden font-mono text-eyebrow font-medium text-accent uppercase md:block">
           Vmap
         </p>
-        <h2 class="text-display-lg text-balance text-fg">
+        <h2 class="text-display-lg text-balance text-fg max-md:text-[48px]">
           Điểm khác biệt
         </h2>
-        <p class="text-body-lg text-fg">
+        <p class="text-body-lg text-fg max-md:text-[18px] max-md:text-balance">
           Được xây dựng cho cách người Việt di chuyển
         </p>
       </div>
 
-      <ul class="flex flex-col gap-6 md:flex-1">
+      <ul class="mx-2.5 flex flex-col gap-6 md:mx-0 md:flex-1">
+        <!-- Viền vẽ bên trong (inset-ring) như Framer, không cộng 2px vào chiều cao card -->
         <li
           v-for="feature in features"
           :key="feature.title"
           class="flex flex-col gap-7.5 rounded-lg p-8 shadow-card"
-          :class="feature.accent ? 'bg-accent text-fg-inverse' : 'border border-line bg-surface-card text-fg'"
+          :class="feature.accent ? 'bg-accent text-fg-inverse' : 'bg-surface-card text-fg inset-ring inset-ring-line'"
         >
           <div
             class="flex size-14 items-center justify-center rounded-sm"
@@ -79,7 +84,7 @@ const steps = [
     </div>
 
     <!-- 4b. How it works -->
-    <div id="how-it-works" class="mt-40.5 flex flex-col items-center gap-12 rounded-lg bg-accent px-5 pt-12 pb-30 text-center text-fg-inverse md:mt-30.25 md:px-10 md:pt-30 md:pb-40 lg:mt-32.25 lg:px-20 lg:pb-50">
+    <div id="how-it-works" class="mt-40.5 flex flex-col items-center gap-8 rounded-lg bg-accent px-5 pt-12 pb-30 text-center text-fg-inverse md:mt-30.25 md:gap-12 md:px-10 md:pt-30 md:pb-40 lg:mt-32.25 lg:px-20 lg:pb-50">
       <h2 class="text-display-lg text-balance">
         Bắt đầu hành trình với VMAP
       </h2>
