@@ -28,10 +28,12 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.64.0",
+    "@tailwindcss/vite": "4.3.3",
     "@vitest/coverage-v8": "^5.0.3",
     "@vue/test-utils": "^2.5.1",
     "happy-dom": "^20.14.5",
     "playwright-core": "^1.64.0",
+    "tailwindcss": "4.3.3",
     "vitest": "^5.0.3"
   }
 }

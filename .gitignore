@@ -32,3 +32,6 @@ test-results/
 
 # AI
 .mcp.json
+
+# Playwright MCP
+.playwright-mcp/
