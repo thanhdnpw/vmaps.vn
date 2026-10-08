@@ -7,5 +7,7 @@
     "directory": ".output/public",
     "not_found_handling": "404-page"
   },
+  // Domain chính (zone vmaps.vn trên Cloudflare), wrangler tự tạo DNS + SSL.
+  "routes": [{ "pattern": "vmaps.vn", "custom_domain": true }],
   "observability": { "enabled": true }
 }

@@ -61,18 +61,9 @@ const columns = [
       </div>
 
       <!-- Phone: căn giữa, chừa chỗ hàng social icon (đang trống trên Framer: cao 24 + gap 32) -->
-      <div class="mt-14 flex flex-col gap-4 text-center md:mt-0 md:text-left">
-        <!-- Thông tin doanh nghiệp: website thương mại phải công bố tên, địa chỉ, MST (NĐ 52/2013) -->
-        <address class="flex flex-col gap-1 text-caption text-fg-muted not-italic">
-          <span class="text-fg">{{ COMPANY.name }}</span>
-          <span>Mã số thuế: {{ COMPANY.taxId }}</span>
-          <span>Địa chỉ: {{ COMPANY_ADDRESS }}</span>
-          <span>Điện thoại: <a :href="COMPANY.phoneHref" class="transition-colors hover:text-fg">{{ COMPANY.phone }}</a></span>
-        </address>
-        <p class="text-fg">
-          © 2026 VMAP
-        </p>
-      </div>
+      <p class="mt-14 text-center text-fg md:mt-0 md:text-left">
+        © 2026 VMAP
+      </p>
 
       <div class="h-px bg-fg-secondary opacity-70" aria-hidden="true" />
     </div>

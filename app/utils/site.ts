@@ -31,5 +31,3 @@ export const COMPANY = {
   phone: '024 6668 6863',
   phoneHref: 'tel:+842466686863'
 } as const
-
-export const COMPANY_ADDRESS = `${COMPANY.address.street}, ${COMPANY.address.locality}, ${COMPANY.address.region}`
