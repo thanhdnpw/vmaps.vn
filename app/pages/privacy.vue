@@ -8,8 +8,9 @@ const paragraphs = [
   'You can export or delete your data at any time from account settings. Deletion removes your sessions, routes, and club memberships within 30 days.'
 ]
 
-useSeoMeta({
-  title: 'Privacy Policy | VMAP'
+usePageSeo({
+  title: 'Privacy Policy | VMAP',
+  description: 'Chính sách quyền riêng tư của VMAP: dữ liệu được thu thập, mục đích sử dụng và quyền kiểm soát dữ liệu của bạn.'
 })
 </script>
 

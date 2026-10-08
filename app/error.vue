@@ -12,7 +12,8 @@ const message = computed(() => notFound.value
   : 'An unexpected error occurred. Please go back to the homepage and try again.')
 
 useSeoMeta({
-  title: () => `${title.value} | VMAP`
+  title: () => `${title.value} | VMAP`,
+  robots: 'noindex, follow'
 })
 </script>
 

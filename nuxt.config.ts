@@ -6,7 +6,31 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-      htmlAttrs: { lang: 'vi' }
+      htmlAttrs: { lang: 'vi' },
+      meta: [
+        { name: 'theme-color', content: '#0e0f12' },
+        { name: 'format-detection', content: 'telephone=no' },
+        { property: 'og:site_name', content: 'VMAP' },
+        { property: 'og:locale', content: 'vi_VN' },
+        { property: 'og:image', content: 'https://vmaps.vn/images/routes/hanoi-skyline.jpg' },
+        { property: 'og:image:width', content: '2048' },
+        { property: 'og:image:height', content: '1211' },
+        { property: 'og:image:alt', content: 'VMAP - Một bản đồ, mọi hành trình' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:image', content: 'https://vmaps.vn/images/routes/hanoi-skyline.jpg' }
+      ],
+      link: [
+        { rel: 'icon', href: '/favicon.ico', sizes: '48x48' },
+        { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+        { rel: 'manifest', href: '/site.webmanifest' }
+      ]
+    }
+  },
+  // Domain chính dùng cho canonical, og:url, sitemap. Đổi qua env NUXT_PUBLIC_SITE_URL.
+  runtimeConfig: {
+    public: {
+      siteUrl: 'https://vmaps.vn'
     }
   },
   css: ['~/assets/css/main.css'],
@@ -20,7 +44,7 @@ export default defineNuxtConfig({
   },
   // Footer còn link tới các trang chưa dựng (/press, /privacy, ...) — không chặn `nuxt generate` vì 404 của chúng.
   nitro: {
-    prerender: { failOnError: false }
+    prerender: { failOnError: false, routes: ['/sitemap.xml'] }
   },
   // Geist + Geist Mono theo docs/design-spec.md §3.2. Tự host qua @nuxt/fonts.
   fonts: {

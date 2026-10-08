@@ -7,8 +7,9 @@ if (!doc) {
   throw createError({ statusCode: 404, statusMessage: 'Không tìm thấy tài liệu', fatal: true })
 }
 
-useSeoMeta({
-  title: `${doc.title} | VMAP`
+usePageSeo({
+  title: `${doc.title} | VMAP`,
+  description: `${doc.title} của VMAP, phiên bản ${doc.version}.`
 })
 </script>
 

@@ -20,7 +20,7 @@
         </p>
         <!-- Ảnh design tablet/phone không có nút này -->
         <div class="hidden lg:block">
-          <AppButton :href="STORE_LINKS.android" variant="light">
+          <AppButton :href="DOWNLOAD_LINK" variant="light">
             Tải app
           </AppButton>
         </div>

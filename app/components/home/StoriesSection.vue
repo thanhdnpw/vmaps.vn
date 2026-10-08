@@ -27,6 +27,10 @@ const features = [
   }
 ]
 
+// Card đang nổi bật (nền accent): mặc định card đầu, hover card nào thì card đó nổi bật.
+const defaultActive = features.findIndex(f => f.accent)
+const activeFeature = ref(defaultActive)
+
 const steps = [
   { title: 'Tìm kiếm', description: 'Tìm địa điểm, dịch vụ và những điều bạn cần trên bản đồ.', icon: 'search' },
   { title: 'Chọn hành trình', description: 'Xem thông tin giao thông và lựa chọn tuyến đường phù hợp với nhu cầu di chuyển.', icon: 'navigation' },
@@ -55,17 +59,18 @@ const steps = [
         </p>
       </div>
 
-      <ul class="mx-2.5 flex flex-col gap-6 md:mx-0 md:flex-1">
+      <ul class="mx-2.5 flex flex-col gap-6 md:mx-0 md:flex-1" @mouseleave="activeFeature = defaultActive">
         <!-- Viền vẽ bên trong (inset-ring) như Framer, không cộng 2px vào chiều cao card -->
         <li
-          v-for="feature in features"
+          v-for="(feature, index) in features"
           :key="feature.title"
-          class="flex flex-col gap-7.5 rounded-lg p-8 shadow-card"
-          :class="feature.accent ? 'bg-accent text-fg-inverse' : 'bg-surface-card text-fg inset-ring inset-ring-line'"
+          class="flex flex-col gap-7.5 rounded-lg p-8 shadow-card inset-ring transition-colors duration-300 ease-out"
+          :class="activeFeature === index ? 'bg-accent text-fg-inverse inset-ring-transparent' : 'bg-surface-card text-fg inset-ring-line'"
+          @mouseenter="activeFeature = index"
         >
           <div
-            class="flex size-14 items-center justify-center rounded-sm"
-            :class="feature.accent ? 'bg-black/20' : 'bg-surface-subtle text-accent'"
+            class="flex size-14 items-center justify-center rounded-sm transition-colors duration-300 ease-out"
+            :class="activeFeature === index ? 'bg-black/20 text-fg-inverse' : 'bg-surface-subtle text-accent'"
           >
             <svg class="size-8" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
               <path :d="feature.icon" />
@@ -128,7 +133,7 @@ const steps = [
         </li>
       </ol>
 
-      <AppButton :href="STORE_LINKS.android" variant="dark" class="w-full md:w-auto">
+      <AppButton :href="DOWNLOAD_LINK" variant="dark" class="w-full md:w-auto">
         Tải app
       </AppButton>
     </div>

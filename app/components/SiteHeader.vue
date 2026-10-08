@@ -26,7 +26,7 @@ watch(() => route.fullPath, () => {
         >
           {{ link.label }}
         </NuxtLink>
-        <AppButton :href="STORE_LINKS.android">
+        <AppButton :href="DOWNLOAD_LINK">
           Tải app
         </AppButton>
       </div>
@@ -61,7 +61,7 @@ watch(() => route.fullPath, () => {
       >
         {{ link.label }}
       </NuxtLink>
-      <AppButton :href="STORE_LINKS.android" class="mt-3 w-full">
+      <AppButton :href="DOWNLOAD_LINK" class="mt-3 w-full" @click="menuOpen = false">
         Tải app
       </AppButton>
     </div>

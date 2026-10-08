@@ -9,7 +9,7 @@
         <p class="text-body-md text-balance text-fg-secondary">
           Khám phá, tìm kiếm và dẫn đường với dữ liệu được phát triển cho Việt Nam.
         </p>
-        <AppButton :href="STORE_LINKS.android" variant="dark" class="w-full md:w-auto">
+        <AppButton :href="DOWNLOAD_LINK" variant="dark" class="w-full md:w-auto">
           Tải app
         </AppButton>
         <div class="flex h-5 items-center gap-2">

@@ -6,8 +6,15 @@ if (!entry) {
   throw createError({ statusCode: 404, statusMessage: 'Không tìm thấy bản phát hành', fatal: true })
 }
 
+// Mô tả lấy từ body: bỏ thẻ HTML, cắt ~160 ký tự cho snippet tìm kiếm.
+const plainBody = entry.body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
+usePageSeo({
+  title: `${entry.title} | VMAP Changelog`,
+  description: plainBody.length > 160 ? `${plainBody.slice(0, 157).trimEnd()}…` : plainBody,
+  type: 'article'
+})
 useSeoMeta({
-  title: `${entry.title} | VMAP Changelog`
+  articlePublishedTime: entry.date
 })
 </script>
 

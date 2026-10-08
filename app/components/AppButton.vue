@@ -2,6 +2,7 @@
 // Button của Framer (docs/design-spec.md §5): `accent` = Standard Accent (cao 44), `dark` = Large Black (cao 56),
 // `light` = biến thể sáng ở Routes (cao 56, nền text/primary), `accent-lg` = Large Accent (cao 56, trang 404).
 // Link ngoài (http...) mở tab mới; link nội bộ đi qua router.
+// Anchor `/#id` khi đang ở đúng trang thì tự cuộn mượt: router bỏ qua điều hướng trùng route nên bấm lần 2 sẽ không cuộn.
 const props = withDefaults(defineProps<{
   href: string
   variant?: 'accent' | 'accent-lg' | 'dark' | 'light'
@@ -12,6 +13,18 @@ const props = withDefaults(defineProps<{
 })
 
 const isExternal = computed(() => /^https?:\/\//.test(props.href))
+
+const route = useRoute()
+function onClick(event: MouseEvent) {
+  const [path, id] = props.href.split('#')
+  if (!id || path !== route.path || event.metaKey || event.ctrlKey || event.shiftKey) return
+  const target = document.getElementById(id)
+  if (!target) return
+  event.preventDefault()
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' })
+  history.replaceState(history.state, '', `#${id}`)
+}
 </script>
 
 <template>
@@ -26,6 +39,7 @@ const isExternal = computed(() => /^https?:\/\//.test(props.href))
       'h-14 bg-surface-dark px-7.5 text-fg shadow-button-dark focus-visible:outline-surface-dark': variant === 'dark',
       'h-14 bg-fg px-5 text-fg-inverse shadow-button-accent focus-visible:outline-fg': variant === 'light'
     }"
+    @click="onClick"
   >
     <!-- Phosphor PlayCircle (fill) -->
     <svg

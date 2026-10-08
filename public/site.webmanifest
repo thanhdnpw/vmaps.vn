@@ -1,0 +1,12 @@
+{
+  "name": "VMAP - Một bản đồ, mọi hành trình",
+  "short_name": "VMAP",
+  "icons": [
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ],
+  "theme_color": "#0e0f12",
+  "background_color": "#0e0f12",
+  "display": "standalone",
+  "start_url": "/"
+}

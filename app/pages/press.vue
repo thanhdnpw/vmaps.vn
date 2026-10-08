@@ -7,8 +7,9 @@ const paragraphs = [
   'Brand assets: Replace this section with links to your own logo pack, product screenshots, and founder photography before publishing.'
 ]
 
-useSeoMeta({
-  title: 'Press and brand assets | VMAP'
+usePageSeo({
+  title: 'Press and brand assets | VMAP',
+  description: 'Press kit của VMAP: thông tin giới thiệu, liên hệ báo chí, logo và hình ảnh sản phẩm.'
 })
 </script>
 

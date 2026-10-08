@@ -1,6 +1,7 @@
 <script setup lang="ts">
-useSeoMeta({
-  title: 'Changelog | VMAP'
+usePageSeo({
+  title: 'Changelog | VMAP',
+  description: 'Nhật ký cập nhật của VMAP: tính năng mới, cải tiến và bản sửa lỗi qua từng phiên bản.'
 })
 </script>
 
