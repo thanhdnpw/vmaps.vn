@@ -26,5 +26,9 @@ useSeoMeta({
     <h1 class="text-display-lg text-fg">
       {{ entry.title }}
     </h1>
+    <!-- HTML tĩnh trong repo (app/utils/changelog.ts), không phải input người dùng -->
+    <!-- eslint-disable vue/no-v-html -->
+    <div class="text-body-md text-fg" v-html="entry.body" />
+    <!-- eslint-enable vue/no-v-html -->
   </main>
 </template>
