@@ -28,7 +28,7 @@ export default defineNuxtConfig({
       subsets: ['vietnamese', 'latin-ext', 'latin']
     },
     families: [
-      { name: 'Geist', provider: 'google', weights: [400, 500, 600] },
+      { name: 'Geist', provider: 'google', weights: [400, 500, 600, 700] },
       { name: 'Geist Mono', provider: 'google', weights: [500] }
     ]
   }
